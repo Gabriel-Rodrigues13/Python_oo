@@ -22,14 +22,17 @@ class Conta():
         self.__saldo += valor
         print("Valor de {} depositado com sucesso".format(valor))
 
+    def __pode_sacar(self, valor_a_sacar):
+        limite_de_saque = self.__saldo + self.__limite
+        return valor_a_sacar <= limite_de_saque
+
     def saca(self, valor):
-        if valor > self.__saldo:
-            print("Saldo insuficiente na conta")
-            return False
-        else:
+        if self.__pode_sacar(valor):
             self.__saldo -= valor
             print("Valor de {} sacado com sucesso".format(valor))
-            return True
+        else:
+            print("Saldo insuficiente na conta")
+
 
     def tranfere(self,valor, destino):
         if self.saca(valor):
