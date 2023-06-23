@@ -5,6 +5,12 @@ class Conta:
         self.__saldo = saldo
         self.__limite = limite
 
+
+    def get_saldo(self):
+        return self.__saldo
+
+    def set_limite(self, limite):
+        self.__limite = limite
     def extrato(self):
         print("O saldo da conta é de: {}".format(self.__saldo))
 
