@@ -1,15 +1,19 @@
-class Conta:
+class Conta():
     def __init__(self, numero, titular, saldo, limite):
         self.__numero = numero
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
 
-
-    def get_saldo(self):
+    @property
+    def saldo(self):
         return self.__saldo
 
-    def set_limite(self, limite):
+    @property
+    def limite(self):
+        return  self.__limite
+    @limite.setter
+    def limite(self, limite):
         self.__limite = limite
     def extrato(self):
         print("O saldo da conta é de: {}".format(self.__saldo))
