@@ -33,8 +33,13 @@ class Conta():
         else:
             print("Saldo insuficiente na conta")
 
-
     def tranfere(self,valor, destino):
         if self.saca(valor):
             destino.deposita(valor)
+    @staticmethod
+    def codigo_banco():
+        return "001"
 
+    @staticmethod
+    def codigos_bancos():
+        return {"BB": "001", "Caixa": "104", "Bradesco": "237" }
